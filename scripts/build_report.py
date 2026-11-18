@@ -23,6 +23,7 @@ from reportlab.platypus import (
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORT_PATH = ROOT / "reports" / "conveyor_jam_mlop_report.pdf"
+CI_EVIDENCE_PATH = ROOT / "reports" / "ci_evidence.json"
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
@@ -72,6 +73,19 @@ def build_report() -> Path:
     comparison = pd.read_csv(ROOT / "reports" / "model_comparison.csv")
     matrices = json.loads((ROOT / "reports" / "confusion_matrices.json").read_text())
     metadata = json.loads((ROOT / "artifacts" / "model_metadata.json").read_text())
+    remote = subprocess.run(
+        ["git", "remote", "get-url", "origin"],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    repository_url = remote.stdout.strip() if remote.returncode == 0 else ""
+    ci_evidence = (
+        json.loads(CI_EVIDENCE_PATH.read_text(encoding="utf-8"))
+        if CI_EVIDENCE_PATH.exists()
+        else None
+    )
     versions = [
         json.loads(
             (ROOT / "data" / "versions" / "conveyor" / f"v{index:03d}" / "metadata.json").read_text()
@@ -254,8 +268,16 @@ def build_report() -> Path:
         ),
         Preformatted(test_run.stdout.strip() or "pytest completed successfully.", styles["Code"]),
         Paragraph(
-            "Remote GitHub Actions status: pending. No Git remote is configured in this "
-            "checkout, so a successful hosted Actions run cannot be claimed yet.",
+            (
+                f'Hosted GitHub Actions: <b>{ci_evidence["status"]}</b>; '
+                f'run {ci_evidence["run_id"]}, commit {ci_evidence["commit"]}. '
+                f'<link href="{ci_evidence["url"]}" color="blue">View run</link>'
+                if ci_evidence
+                else (
+                    "Hosted GitHub Actions status is not recorded in this report yet. "
+                    "See the repository Actions tab for the current run."
+                )
+            ),
             styles["BodyText"],
         ),
         Paragraph("8. FastAPI serving and prediction result", styles["Heading1"]),
@@ -279,7 +301,15 @@ def build_report() -> Path:
             styles["BodyText"],
         ),
         Spacer(1, 4 * mm),
-        Paragraph("Repository: Universal-MLOps-Pipeline (local checkout; remote not configured)", styles["Small"]),
+        Paragraph(
+            "Repository: "
+            + (
+                f'<link href="{repository_url}" color="blue">{repository_url}</link>'
+                if repository_url
+                else "Git remote not configured"
+            ),
+            styles["Small"],
+        ),
     ]
 
     REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)

@@ -4,6 +4,8 @@ This project predicts whether an automated parcel-sorting conveyor is likely to
 jam during its **next operating shift**. The included data is synthetic and
 intended for demonstration, not production maintenance decisions.
 
+Repository: [MOHANCHARAN24/Conveyor_jam_MLOPS](https://github.com/MOHANCHARAN24/Conveyor_jam_MLOPS)
+
 ## What is included
 
 - Two versioned datasets, each with 500 synthetic conveyor shifts:
