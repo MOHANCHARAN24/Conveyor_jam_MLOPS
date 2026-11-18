@@ -1,0 +1,8 @@
+{
+  "dataset_path": "data/raw/classification.csv",
+  "target": "target",
+  "task": "classification",
+  "test_size": 0.2,
+  "random_state": 42,
+  "primary_metric": "f1"
+}

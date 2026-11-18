@@ -1,0 +1,25 @@
+artifact_path: file:C:/Users/chara/OneDrive/Desktop/Universal-MLOps-Pipeline/mlruns/1/models/m-c607f0ae3af346719e4d2985810bb62d/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.14.7
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.9.1
+    skops_trusted_types:
+    - numpy.dtype
+    - sklearn.tree._tree.Tree
+mlflow_version: 3.18.0
+model_id: m-c607f0ae3af346719e4d2985810bb62d
+model_size_bytes: 186304
+model_uuid: m-c607f0ae3af346719e4d2985810bb62d
+prompts: null
+run_id: 9a56a487ed734122b7d692945b859ead
+utc_time_created: '2026-11-18 05:08:54.123285'
