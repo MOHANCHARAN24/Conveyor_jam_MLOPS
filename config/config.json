@@ -1,8 +1,10 @@
 {
-  "dataset_path": "data/raw/classification.csv",
-  "target": "target",
-  "task": "classification",
+  "dataset_paths": [
+    "data/versions/conveyor/v001/conveyor_shifts_v1.csv",
+    "data/versions/conveyor/v002/conveyor_shifts_v2.csv"
+  ],
   "test_size": 0.2,
   "random_state": 42,
-  "primary_metric": "f1"
+  "experiment_name": "conveyor-jam-prediction",
+  "registered_model_name": "ConveyorJamRiskModel"
 }

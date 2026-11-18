@@ -5,6 +5,7 @@ venv/
 .env
 .pytest_cache/
 .mlruns/
+mlruns/
 mlflow.db
 artifacts/*
 !artifacts/.gitkeep
@@ -14,5 +15,17 @@ data/processed/*
 !data/processed/.gitkeep
 data/versions/*
 !data/versions/.gitkeep
+!data/versions/conveyor/
+data/versions/conveyor/*
+!data/versions/conveyor/v001/
+!data/versions/conveyor/v002/
+data/versions/conveyor/v001/*
+data/versions/conveyor/v002/*
+!data/versions/conveyor/v001/*.csv
+!data/versions/conveyor/v001/metadata.json
+!data/versions/conveyor/v002/*.csv
+!data/versions/conveyor/v002/metadata.json
 features/*
 !features/.gitkeep
+!features/conveyor_feature_store.csv
+!artifacts/model_metadata.json

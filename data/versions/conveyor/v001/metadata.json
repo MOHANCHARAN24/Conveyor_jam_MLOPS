@@ -1,0 +1,8 @@
+{
+  "version": "v001",
+  "file": "conveyor_shifts_v1.csv",
+  "rows": 500,
+  "sha256": "36f76774a1821bed151dd30b0cd07684c8e4750c149638a051c328f9aa9ae1a3",
+  "created_utc": "2026-11-18T08:51:52.060820+00:00",
+  "notes": "Baseline operating shifts; 500 synthetic records."
+}

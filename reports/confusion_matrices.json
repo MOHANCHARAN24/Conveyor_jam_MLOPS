@@ -1,0 +1,34 @@
+{
+  "logistic_regression": {
+    "labels": [
+      "Normal Operation",
+      "Jam Risk"
+    ],
+    "matrix": [
+      [
+        78,
+        39
+      ],
+      [
+        30,
+        53
+      ]
+    ]
+  },
+  "random_forest": {
+    "labels": [
+      "Normal Operation",
+      "Jam Risk"
+    ],
+    "matrix": [
+      [
+        90,
+        27
+      ],
+      [
+        34,
+        49
+      ]
+    ]
+  }
+}

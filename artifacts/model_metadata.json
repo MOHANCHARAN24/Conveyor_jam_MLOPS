@@ -1,0 +1,31 @@
+{
+  "task": "classification",
+  "target": "next_shift_jam",
+  "model_name": "random_forest",
+  "metrics": {
+    "accuracy": 0.695,
+    "precision": 0.6447368421052632,
+    "recall": 0.5903614457831325,
+    "f1": 0.6163522012578616
+  },
+  "feature_columns": [
+    "motor_current_a",
+    "rated_motor_current_a",
+    "vibration_mm_s",
+    "belt_age_years",
+    "parcels_per_minute",
+    "dust_accumulation_index",
+    "days_since_maintenance",
+    "humidity_pct",
+    "motor_load_ratio",
+    "belt_wear_pressure_index"
+  ],
+  "dataset_paths": [
+    "data/versions/conveyor/v001/conveyor_shifts_v1.csv",
+    "data/versions/conveyor/v002/conveyor_shifts_v2.csv"
+  ],
+  "training_rows": 800,
+  "test_rows": 200,
+  "registered_model_name": "ConveyorJamRiskModel",
+  "registered_model_version": 3
+}

@@ -1,0 +1,8 @@
+{
+  "version": "v002",
+  "file": "conveyor_shifts_v2.csv",
+  "rows": 500,
+  "sha256": "b9f4f363c002d8c1eca8cf1f169df4106220133923be07b004986fff486e5a12",
+  "created_utc": "2026-11-18T08:51:52.092650+00:00",
+  "notes": "Festival shopping shifts; approximately 30% higher parcel throughput and elevated operating stress."
+}

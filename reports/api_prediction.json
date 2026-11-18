@@ -1,0 +1,19 @@
+{
+  "request": {
+    "features": {
+      "motor_current_a": 18.0,
+      "rated_motor_current_a": 20.0,
+      "vibration_mm_s": 7.5,
+      "belt_age_years": 8.0,
+      "parcels_per_minute": 110.0,
+      "dust_accumulation_index": 72.0,
+      "days_since_maintenance": 95.0,
+      "humidity_pct": 68.0
+    }
+  },
+  "response": {
+    "prediction": "Jam Risk",
+    "jam_probability": 0.864,
+    "model": "random_forest"
+  }
+}
