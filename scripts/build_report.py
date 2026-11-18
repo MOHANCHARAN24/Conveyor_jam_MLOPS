@@ -271,7 +271,8 @@ def build_report() -> Path:
             (
                 f'Hosted GitHub Actions: <b>{ci_evidence["status"]}</b>; '
                 f'run {ci_evidence["run_id"]}, commit {ci_evidence["commit"]}. '
-                f'<link href="{ci_evidence["url"]}" color="blue">View run</link>'
+                f'<link href="{ci_evidence["url"]}" color="blue">View run</link><br/>'
+                f'{ci_evidence.get("details", "")}'
                 if ci_evidence
                 else (
                     "Hosted GitHub Actions status is not recorded in this report yet. "

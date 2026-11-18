@@ -14,5 +14,5 @@ python -m src.train --config config/config.json
 python scripts/build_report.py
 ```
 
-The report labels hosted GitHub Actions evidence as pending until this checkout
-has a GitHub remote and the workflow completes successfully.
+Hosted workflow status is included only when a CI evidence record exists. Local
+test success is reported separately from hosted GitHub Actions status.

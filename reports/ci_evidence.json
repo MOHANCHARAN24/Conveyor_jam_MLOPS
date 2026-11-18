@@ -1,0 +1,7 @@
+{
+  "status": "failure",
+  "run_id": 44277153582,
+  "commit": "72d8a8b5e88cdd7d93505bcf6398ed4b178e2d2b",
+  "url": "https://github.com/MOHANCHARAN24/Conveyor_jam_MLOPS/actions/runs/44277153582",
+  "details": "GitHub reported the job as failed, but the job log endpoint returned 404 and the run log archive was empty."
+}
